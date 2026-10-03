@@ -1,128 +1,116 @@
-const loadingScreen = document.getElementById("loadingScreen");
-const mainContent = document.getElementById("mainContent");
+document.addEventListener("DOMContentLoaded", function () {
 
-const progressNumber = document.getElementById("progressNumber");
-const progressBar = document.getElementById("progressBar");
-const progressCircle = document.getElementById("progressCircle");
-const loadingText = document.getElementById("loadingText");
+  const loadingScreen = document.getElementById("loadingScreen");
+  const mainContent = document.getElementById("mainContent");
 
-const surpriseButton = document.getElementById("surpriseButton");
-const surprise = document.getElementById("surprise");
+  const progressNumber = document.getElementById("progressNumber");
+  const progressBar = document.getElementById("progressBar");
+  const progressCircle = document.getElementById("progressCircle");
+  const loadingText = document.getElementById("loadingText");
 
+  const surpriseButton = document.getElementById("surpriseButton");
+  const surprise = document.getElementById("surprise");
 
-// ===============================
-// CARGADOR 0% → 100%
-// ===============================
+  let progress = 0;
 
-let progress = 0;
+  const messages = [
+    "Cargando una sorpresa especial...",
+    "Preparando un poquito de magia...",
+    "Llenando todo de girasoles...",
+    "Preparando tus recuerdos...",
+    "Guardando mucho cariño...",
+    "Ya casi está...",
+    "Todo está listo para ti 🌻"
+  ];
 
-const messages = [
-  "Preparando una sorpresa especial...",
-  "Buscando un poquito de magia...",
-  "Llenando todo de girasoles...",
-  "Preparando tus recuerdos...",
-  "Guardando mucho cariño...",
-  "Ya casi está...",
-  "La sorpresa está lista 🌻"
-];
+  const circleLength = 515;
 
-const totalCircleLength = 515;
+  const timer = setInterval(function () {
 
-const loadingInterval = setInterval(() => {
+    progress++;
 
-  progress++;
+    progressNumber.textContent = progress + "%";
 
-  progressNumber.textContent = `${progress}%`;
-  progressBar.style.width = `${progress}%`;
+    progressBar.style.width = progress + "%";
 
-  const offset =
-    totalCircleLength -
-    (totalCircleLength * progress) / 100;
+    const circleOffset =
+      circleLength - (circleLength * progress / 100);
 
-  progressCircle.style.strokeDashoffset = offset;
+    progressCircle.style.strokeDashoffset = circleOffset;
 
 
-  // Cambiar mensajes durante la carga
-
-  if (progress < 20) {
-    loadingText.textContent = messages[0];
-  } else if (progress < 35) {
-    loadingText.textContent = messages[1];
-  } else if (progress < 50) {
-    loadingText.textContent = messages[2];
-  } else if (progress < 65) {
-    loadingText.textContent = messages[3];
-  } else if (progress < 80) {
-    loadingText.textContent = messages[4];
-  } else if (progress < 95) {
-    loadingText.textContent = messages[5];
-  } else {
-    loadingText.textContent = messages[6];
-  }
+    if (progress < 20) {
+      loadingText.textContent = messages[0];
+    } else if (progress < 35) {
+      loadingText.textContent = messages[1];
+    } else if (progress < 50) {
+      loadingText.textContent = messages[2];
+    } else if (progress < 65) {
+      loadingText.textContent = messages[3];
+    } else if (progress < 80) {
+      loadingText.textContent = messages[4];
+    } else if (progress < 95) {
+      loadingText.textContent = messages[5];
+    } else {
+      loadingText.textContent = messages[6];
+    }
 
 
-  // Cuando llega al 100%
+    if (progress >= 100) {
 
-  if (progress >= 100) {
+      clearInterval(timer);
 
-    clearInterval(loadingInterval);
+      loadingText.textContent =
+        "Todo está listo para ti 🌻";
 
-    loadingText.textContent =
-      "Todo está listo para ti 🌻";
+      setTimeout(function () {
 
-    setTimeout(() => {
+        loadingScreen.classList.add("fade-out");
 
-      loadingScreen.classList.add("fade-out");
+        setTimeout(function () {
 
-      setTimeout(() => {
+          loadingScreen.style.display = "none";
 
-        loadingScreen.style.display = "none";
+          mainContent.classList.remove("hidden");
 
-        mainContent.classList.remove("hidden");
+          window.scrollTo(0, 0);
 
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
+        }, 1000);
+
+      }, 800);
+    }
+
+  }, 50);
+
+
+  // BOTÓN DE SORPRESA
+
+  if (surpriseButton && surprise) {
+
+    surpriseButton.addEventListener("click", function () {
+
+      if (surprise.classList.contains("hidden")) {
+
+        surprise.classList.remove("hidden");
+
+        surpriseButton.textContent =
+          "Cerrar sorpresa 🌻";
+
+        surprise.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
         });
 
-      }, 1000);
+      } else {
 
-    }, 900);
-  }
+        surprise.classList.add("hidden");
 
-}, 45);
+        surpriseButton.textContent =
+          "Abrir mi sorpresa ✨";
 
+      }
 
-// ===============================
-// BOTÓN DE SORPRESA
-// ===============================
-
-surpriseButton.addEventListener("click", () => {
-
-  const isHidden = surprise.classList.contains("hidden");
-
-  if (isHidden) {
-
-    surprise.classList.remove("hidden");
-
-    surpriseButton.textContent =
-      "Cerrar sorpresa 🌻";
-
-    setTimeout(() => {
-
-      surprise.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-    }, 100);
-
-  } else {
-
-    surprise.classList.add("hidden");
-
-    surpriseButton.textContent =
-      "Abrir mi sorpresa ✨";
+    });
 
   }
 
