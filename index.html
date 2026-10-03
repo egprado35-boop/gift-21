@@ -3,62 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f5eee7">
-  <title>Para ti ❤️</title>
+  <meta name="theme-color" content="#f4c542">
+  <title>Para mi persona favorita 🌻</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <main class="page">
-    <section class="hero">
-      <p class="eyebrow">18 de junio</p>
-      <h1>Hoy es el cumpleaños<br>de mi persona favorita</h1>
-      <p class="subtitle">Un pequeño regalo hecho especialmente para ti.</p>
-    </section>
 
-    <section class="polaroid-wrap">
-      <div class="polaroid">
-        <img id="mainPhoto" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85" alt="Nuestra foto">
-        <div class="polaroid-caption">Nuestra historia ❤️</div>
-      </div>
-    </section>
+  <!-- PANTALLA DE CARGA -->
+  <section id="loadingScreen" class="loading-screen">
 
-    <div class="divider">〜</div>
+    <div class="loading-content">
 
-    <section class="letter-card">
-      <span class="seal">♥</span>
-      <h2>Para ti</h2>
-      <p>
-        Hay personas que llegan a nuestra vida y la hacen más bonita.
-        Gracias por cada momento, cada risa y cada recuerdo.
+      <div class="top-heart">♡</div>
+
+      <p class="small-title">
+        Preparando algo especial...
       </p>
-      <p class="signature">Con todo mi amor</p>
-    </section>
 
-    <section class="gallery">
-      <h2>Algunos de nuestros momentos</h2>
-      <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e67?auto=format&fit=crop&w=700&q=80" alt="Momento 1">
-        <img src="https://images.unsplash.com/photo-1501901609775-7c1f0924c5c4?auto=format&fit=crop&w=700&q=80" alt="Momento 2">
-        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80" alt="Momento 3">
-        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=700&q=80" alt="Momento 4">
+      <h1>
+        Para mi persona<br>
+        favorita 🌻
+      </h1>
+
+      <div class="sunflower-loader">
+
+        <div class="progress-ring">
+          <svg viewBox="0 0 200 200">
+            <circle
+              class="ring-background"
+              cx="100"
+              cy="100"
+              r="82">
+            </circle>
+
+            <circle
+              id="progressCircle"
+              class="ring-progress"
+              cx="100"
+              cy="100"
+              r="82">
+            </circle>
+          </svg>
+        </div>
+
+        <div class="sunflower">
+          🌻
+        </div>
+
       </div>
+
+      <div id="progressNumber" class="progress-number">
+        0%
+      </div>
+
+      <p id="loadingText" class="loading-text">
+        Cargando una sorpresa especial...
+      </p>
+
+      <div class="progress-bar">
+        <div id="progressBar" class="progress-bar-fill"></div>
+      </div>
+
+      <p class="loading-message">
+        Porque alguien tan especial<br>
+        merece un regalo diferente.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="mainContent" class="main-content hidden">
+
+    <section class="hero">
+
+      <div class="music-button">
+        ♫
+      </div>
+
+      <p class="date">
+        18 DE JUNIO
+      </p>
+
+      <h1>
+        Hoy es el cumpleaños<br>
+        de mi persona favorita
+      </h1>
+
+      <div class="decorative-heart">
+        ♡
+      </div>
+
+      <p class="intro">
+        Hoy quiero regalarte algo pequeño,
+        pero hecho con muchísimo cariño.
+      </p>
+
     </section>
 
-    <button id="surpriseButton" class="surprise-button">Abrir mi sorpresa ✨</button>
 
-    <section id="surprise" class="surprise hidden">
-      <div class="gift">🎁</div>
-      <h2>Lo mejor todavía no termina...</h2>
-      <p>Esta parte después la convertiremos en un regalo personalizable.</p>
+    <!-- FOTO PRINCIPAL -->
+    <section class="photo-section">
+
+      <div class="polaroid">
+
+        <img
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=85"
+          alt="Girasoles">
+
+        <p>
+          Un poquito de luz para alguien
+          que ilumina mi vida 🌻
+        </p>
+
+      </div>
+
     </section>
 
-    <footer>Hecho con ❤️</footer>
+
+    <div class="divider">
+      🌻　♡　🌻
+    </div>
+
+
+    <!-- MENSAJE -->
+    <section class="letter">
+
+      <div class="flower-icon">
+        🌻
+      </div>
+
+      <h2>
+        Feliz cumpleaños
+      </h2>
+
+      <p>
+        Que este nuevo año de vida esté lleno
+        de momentos hermosos, sonrisas,
+        aventuras y sueños cumplidos.
+      </p>
+
+      <p>
+        Espero que nunca olvides lo especial
+        que eres y lo mucho que mereces ser feliz.
+      </p>
+
+      <p>
+        Gracias por existir, por iluminar
+        todo a tu alrededor y por hacer
+        que cada momento sea más bonito.
+      </p>
+
+      <div class="signature">
+        Con todo mi cariño ❤️
+      </div>
+
+    </section>
+
+
+    <!-- GALERÍA -->
+    <section class="gallery">
+
+      <h2>
+        Algunos momentos especiales
+      </h2>
+
+      <p class="gallery-intro">
+        Esta parte después la llenaremos
+        con nuestras fotos.
+      </p>
+
+      <div class="gallery-grid">
+
+        <div class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1494625927555-6ec4433b1571?auto=format&fit=crop&w=700&q=80"
+            alt="Momento especial">
+        </div>
+
+        <div class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1469259943454-aa100abba749?auto=format&fit=crop&w=700&q=80"
+            alt="Girasol">
+        </div>
+
+        <div class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=700&q=80"
+            alt="Girasoles">
+        </div>
+
+        <div class="photo-card">
+          <img
+            src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?auto=format&fit=crop&w=700&q=80"
+            alt="Campo de flores">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SORPRESA -->
+    <section class="surprise-section">
+
+      <button id="surpriseButton">
+        Abrir mi sorpresa ✨
+      </button>
+
+      <div id="surprise" class="surprise hidden">
+
+        <div class="big-sunflower">
+          🌻
+        </div>
+
+        <h2>
+          Esto recién comienza...
+        </h2>
+
+        <p>
+          Porque todavía tenemos muchos recuerdos,
+          palabras y momentos que agregar.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      Hecho con ❤️ y muchos girasoles 🌻
+    </footer>
+
   </main>
 
-  <button id="musicButton" class="music-button" aria-label="Activar música">♫</button>
+
   <script src="script.js"></script>
+
 </body>
 </html>
