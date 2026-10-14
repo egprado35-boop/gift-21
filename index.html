@@ -324,39 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
     
-/* CUENTA REGRESIVA PARA JAZ */
-const countdown = document.getElementById("countdown");
-
-function actualizarCuentaRegresiva() {
-    if (!countdown) return;
-
-    // 21 de febrero de 2027, medianoche en Argentina
-    const fechaObjetivo = new Date("2027-02-21T00:00:00-03:00");
-    const ahora = new Date();
-    const diferencia = fechaObjetivo - ahora;
-
-    if (diferencia <= 0) {
-        countdown.textContent = "¡Llegó el momento de tu sorpresa! ❤️‍🩹";
-        return;
-    }
-
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor(
-        (diferencia / (1000 * 60 * 60)) % 24
-    );
-    const minutos = Math.floor(
-        (diferencia / (1000 * 60)) % 60
-    );
-    const segundos = Math.floor(
-        (diferencia / 1000) % 60
-    );
-
-    countdown.textContent =
-        `${dias} días · ${horas} horas · ${minutos} min · ${segundos} seg`;
-}
-
-actualizarCuentaRegresiva();
-setInterval(actualizarCuentaRegresiva, 1000);
 
 </script>
 
