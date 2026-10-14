@@ -340,15 +340,22 @@ document.addEventListener("DOMContentLoaded", function () {
 const surpriseButton = document.getElementById("surpriseButton");
 const surprise = document.getElementById("surprise");
 
+
+const surpriseButton = document.getElementById("surpriseButton");
+const surprise = document.getElementById("surprise");
+
 if (surpriseButton && surprise) {
-  surpriseButton.addEventListener("click", function () {
-    surprise.classList.remove("hidden");
-    surprise.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  });
+    surpriseButton.onclick = function () {
+        surprise.classList.remove("hidden");
+        surprise.style.display = "block";
+
+        surprise.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    };
 }
+
 
     
 
