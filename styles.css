@@ -679,3 +679,53 @@ footer {
 .main-content {
   animation: fadeUp .8s ease;
 }
+/* ==================================
+   INVITACION ESPECIAL PARA JAZ 🌻
+================================== */
+.invitation-card {
+    max-width: 430px;
+    margin: 30px auto;
+    padding: 18px;
+    background: linear-gradient(145deg, #fffdf4, #fff1d2);
+    border: 2px solid #e6c46b;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(125, 83, 24, 0.18);
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeUp 0.8s ease both;
+}
+.invitation-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+    object-position: center;
+    border: 6px solid #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 5px 16px rgba(90, 61, 25, 0.16);
+    box-sizing: border-box;
+}
+.invitation-message {
+    margin: 22px 4px 12px;
+    color: #78502b;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+.invitation-hint {
+    margin: 12px 0 4px;
+    color: #9a702e;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+@media (max-width: 480px) {
+    .invitation-card {
+        margin: 24px 12px;
+        padding: 13px;
+    }
+    .invitation-message {
+        font-size: 1.05rem;
+    }
+}
