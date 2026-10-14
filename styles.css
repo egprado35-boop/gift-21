@@ -683,9 +683,9 @@ footer {
    INVITACION ESPECIAL PARA JAZ 🌻
 ================================== */
 .invitation-card {
-    max-width: 430px;
+    max-width: 360px;
     margin: 30px auto;
-    padding: 18px;
+    padding: 14px;
     background: linear-gradient(145deg, #fffdf4, #fff1d2);
     border: 2px solid #e6c46b;
     border-radius: 22px;
@@ -697,13 +697,14 @@ footer {
 .invitation-photo {
     display: block;
     width: 100%;
+    max-width: 230px;
     height: auto;
-    max-height: 520px;
-    object-fit: cover;
-    object-position: center;
-    border: 6px solid #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 5px 16px rgba(90, 61, 25, 0.16);
+    max-height: none;
+    object-fit: contain;
+    margin: 0 auto;
+    border: 4px solid #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(90, 61, 25, 0.14);
     box-sizing: border-box;
 }
 .invitation-message {
