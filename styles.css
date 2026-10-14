@@ -591,27 +591,35 @@ body {
 }
 
 #surpriseButton {
-  padding: 16px 26px;
-
-  border: none;
-  border-radius: 999px;
-
-  background: var(--brown);
-
-  color: white;
-
-  font-family: "Inter", sans-serif;
-  font-size: .95rem;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 12px 28px rgba(60,38,20,.2);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    display: inline-block;
+    max-width: 100%;
+    padding: 16px 26px;
+    border: 2px solid #e8c765;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #8b5a24, #c58b2b, #e0b94f);
+    color: #fffdf4;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(139, 90, 36, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: sunflowerGlow 2.8s ease-in-out infinite;
+}
+#surpriseButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 24px rgba(139, 90, 36, 0.32);
+}
+#surpriseButton:active {
+    transform: scale(0.96);
+}
+@keyframes sunflowerGlow {
+    0%, 100% {
+        box-shadow: 0 6px 18px rgba(139, 90, 36, 0.20);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(224, 185, 79, 0.48);
+    }
 }
 
 #surpriseButton:active {
